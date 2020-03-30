@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="unit_change_displayed">
+    <item>Fahrenheit</item>
+    <item>Celsius</item>
+</string-array>
+
+
+    <string-array name="unit_change_internal">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:layout="@layout/settings_toolbar"
+        android:lineSpacingExtra="8sp"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#0B0A0A"
+        android:title="Weather Settings">
+
+        <EditTextPreference
+            android:defaultValue="60074"
+            android:key="zip_info"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Input zip code"
+            android:title="Zip Code" />
+        <ListPreference
+            android:defaultValue="Fahrenheit"
+            android:entries="@array/unit_change_displayed"
+            android:entryValues="@array/unit_change_internal"
+            android:key="unit_info"
+            android:title="Unit"
+            android:summary="Change unit types"
+            />
+
+<!--
+        <ListPreference
+            android:defaultValue="Fahrenheit"
+            android:entries="@array/unit_change_displayed"
+            android:entryValues="@array/unit_change_internal"
+            android:key="unit_info"
+            android:summary="Change unit type"
+            android:title="Units" />-->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

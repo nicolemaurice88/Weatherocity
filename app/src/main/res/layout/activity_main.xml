@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?><!--save this as warm:"#F5B40B"-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_back"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:id="@+id/weather_data_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--Header-->
+        <include layout="@layout/header_toolbar" />
+
+        <!--Current Weather-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/current_display"
+            android:layout_width="337dp"
+            android:layout_height="285dp"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            app:cardBackgroundColor="@color/warm_secondary"
+            app:cardCornerRadius="20dp">
+
+
+            <!--Display:DO NOT DELETE ITEMS BELOW-->
+            <LinearLayout
+                android:id="@+id/display_half_1"
+                android:layout_width="match_parent"
+                android:layout_height="158dp"
+
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/current_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/current_cond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="4dp"
+                    android:text="Clear Day"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/display_half_2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/current_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:paddingTop="6dp"
+                    android:text="@string/default_temp"
+                    android:textColor="#fff"
+                    android:textSize="70sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/higtemp_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/default_temp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="|"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/lowtemp_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/default_temp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+         <!--Hourly Display-->
+        <LinearLayout
+            android:id="@+id/hourly_forecast"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/hrly_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:padding="10dp"
+                android:text="Hourly"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+        <!--Hourly Weather-->
+        <GridLayout
+            android:id="@+id/hourly_display"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:padding="4dp"
+            android:rowCount="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/index1"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon1"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/index2"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon2"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/index3"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon3"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/index4"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon4"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/index5"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon5"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/index6"
+                android:layout_width="113dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/hr6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_time"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/hr_icon6"
+                    android:layout_width="49dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/clear_day" />
+
+                <TextView
+                    android:id="@+id/hrtemp_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/default_temp"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <!--High and Low: Change this to sunrise/sunset-->
+        <GridLayout
+
+            android:layout_width="332dp"
+            android:layout_height="146dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="8dp"
+
+            android:columnCount="2"
+            android:rowCount="1">
+            <!--sunrise item-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sunrise"
+                android:layout_width="158dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Sunrise"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/sunrise"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/sunriseTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="4dp"
+                    android:text="6:54 AM"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+            <!--sunset item-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sunset"
+                android:layout_width="162dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/warm_secondary"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Sunset"
+                    android:textColor="#ffff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/sunset"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/sunsetTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="4dp"
+                    android:text="6:54 AM"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+    </style>
+
+
+
+
+<!--Settings Actionbar-->
+    <style name="SettingsTheme" >
+
+<!--When a parent isn't set, default DarkActionBar is given:1. Does it has anything to do with base application?-->
+    </style>
+        <!-- Customize your theme here. -->
+       <style name="NewToolBarSettings" parent="Theme.AppCompat.Light.NoActionBar">
+
+       </style>
+
+</resources>

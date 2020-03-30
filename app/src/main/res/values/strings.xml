@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weatherocity</string>
+    <string name="default_city">Chicago,IL</string>
+    <string name="default_temp">39\u00B0"</string>
+    <string name="default_time">4:00pm"</string>
+    <string name="degree_unicode">°</string>
+    <string name="set_item">Settings</string>
+
+
+</resources>
